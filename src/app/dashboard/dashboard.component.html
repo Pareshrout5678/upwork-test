@@ -1,0 +1,53 @@
+<div class="main-content">
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-md-12">
+        <div class="card">
+          <div class="card-header card-header-danger">
+            <h4 class="card-title">Simple Table</h4>
+            <p class="card-category">Here is a subtitle for this table</p>
+          </div>
+          <div class="card-body">
+            <div class="table-responsive">
+              <table class="table">
+                <thead cTableColor="light">
+                  <tr>
+                    <th class="text-center">Title</th>
+                    <th>Director</th>
+                    <th class="text-center">Edited</th>
+                    <th>Created</th>
+                    <th class="text-center">Release Date</th>
+                    <th class="text-center">Opening Crawl</th>
+                  </tr>
+                </thead>
+
+                <tbody>
+                  <tr *ngFor="let user of (getAllFilms$ | async); index as i">
+                   
+                    <td>{{ user.title }}</td>
+                    <td>
+                      <div>{{ user.director }}</div>
+                    </td>
+                    <td class="text-center">
+                      {{ user.edited | date }}
+                    </td>
+                    <td>
+                      {{ user.created | date }}
+                    </td>
+                    <td class="text-center">
+                      {{ user.releaseDate | date }}
+                    </td>
+                    <td>
+                      {{ user.openingCrawl }}
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
